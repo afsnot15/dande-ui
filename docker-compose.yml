@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  dande-ui:
+    build: 
+       context: .
+       dockerfile: .docker/Dockerfile
+    container_name: Dande
+    ports:
+      - "3000:3000"  
+    volumes:
+        - '.:/home/node/app'
+    environment:
+      - CHOKIDAR_USEPOLLING=true 
+    stdin_open: true 
+    tty: true  
+
